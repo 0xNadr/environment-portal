@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: environment-portal-dev
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/0xNadr/environment-portal.git
+    targetRevision: main
+    path: overlays/dev
+  destination:
+    server: https://api.rm3.7wse.p1.openshiftapps.com:6443
+    namespace: naderintech-dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
