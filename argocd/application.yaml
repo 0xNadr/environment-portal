@@ -10,8 +10,8 @@ spec:
     targetRevision: main
     path: overlays/dev
   destination:
-    server: https://api.rm3.7wse.p1.openshiftapps.com:6443
-    namespace: naderintech-dev
+    server: https://kubernetes.default.svc
+    namespace: environment-portal
   syncPolicy:
     automated:
       prune: true
